@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recubrimientos Sika para Fachadas | Distribuidor Autorizado</title>
+    <style>
+        /* ESTILOS GENERALES */
+        :root {
+            --sika-blue: #0054A6;
+            --sika-orange: #FF6B00;
+            --sika-gray: #333333;
+            --sika-light: #F5F5F5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--sika-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--sika-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--sika-blue);
+            color: var(--sika-blue);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--sika-blue);
+            color: white;
+        }
+        
+        .btn-call {
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .btn-call:hover {
+            background: #20BD5C;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 84, 166, 0.8), rgba(0, 84, 166, 0.9)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* BENEFICIOS */
+        .beneficios {
+            padding: 80px 0;
+            background: var(--sika-light);
+        }
+        
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .beneficio-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .beneficio-card i {
+            font-size: 2.5rem;
+            color: var(--sika-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* PROYECTOS */
+        .proyectos {
+            padding: 80px 0;
+        }
+        
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .proyecto-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .proyecto-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .proyecto-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .proyecto-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .proyecto-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .proyecto-info h3 {
+            color: var(--sika-blue);
+            margin-bottom: 10px;
+        }
+        
+        .proyecto-info p {
+            color: var(--sika-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* PRODUCTOS */
+        .productos {
+            padding: 80px 0;
+            background: var(--sika-light);
+        }
+        
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .producto-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* CONTACTO */
+        .contacto {
+            padding: 80px 0;
+            background: var(--sika-blue);
+            color: white;
+        }
+        
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .info-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contacto-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contacto-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contacto-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* BOTÓN FLOTANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20BD5C;
+            transform: scale(1.1);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/523333555522?text=Hola,%20me%20interesan%20los%20recubrimientos%20Sika%20para%20fachadas" 
+       class="whatsapp-float" 
+       target="_blank">
+       📞
+    </a>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Recubrimientos Sika para Fachadas de Concreto</h1>
+            <p>Protección avanzada y estética duradera para sus proyectos arquitectónicos. Distribuidor autorizado con soporte técnico local.</p>
+            <div class="cta-buttons">
+                <a href="#cotizar" class="btn">Solicitar Cotización</a>
+                <a href="tel:+523333555522" class="btn btn-call">
+                    📞 Llamar Ahora
+                </a>
+                <a href="#contacto" class="btn btn-secondary">Asesoría Técnica</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">¿Por Qué Elegir Recubrimientos Sika?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                Como distribuidor autorizado, garantizamos productos originales y soporte técnico especializado para cada proyecto.
+            </p>
+            
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div>🛡️</div>
+                    <h3>Protección Comprobada</h3>
+                    <p>Tecnología repelente al agua y resistencia UV certificada para máxima durabilidad.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div>🎨</div>
+                    <h3>Estética Duradera</h3>
+                    <p>Amplia gama de colores y texturas que mantienen su apariencia por años.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div>⚡</div>
+                    <h3>Aplicación Expertas</h3>
+                    <p>Equipo de aplicadores certificados con experiencia en proyectos locales.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div>💰</div>
+                    <h3>Rentabilidad</h3>
+                    <p>Evite costosas reparaciones futuras con protección preventiva de calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS LOCALES -->
+    <section class="proyectos">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Nuestros Proyectos con Sika</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                Casos de éxito en la región con resultados comprobados
+            </p>
+            
+            <div class="proyectos-grid">
+                <!-- PROYECTO 1 - EDIFICIO CORPORATIVO -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Edificio Corporativo Reforma - Recubrimiento Sika">
+                    <div class="proyecto-info">
+                        <h3>Edificio Corporativo Reforma</h3>
+                        <p>Recubrimiento Sikagard®-670 W aplicado en fachada de 25 pisos. Protección contra humedad y contaminación ambiental.</p>
+                    </div>
+                </div>
+                
+                <!-- PROYECTO 2 - CONDOMINIO RESIDENCIAL -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80" 
+                         alt="Condominio Altavista - Recubrimientos decorativos Sika">
+                    <div class="proyecto-info">
+                        <h3>Condominio Altavista</h3>
+                        <p>Sikacolor®-825 en textura rugosa para 120 departamentos. Mejora estética y protección duradera.</p>
+                    </div>
+                </div>
+                
+                <!-- PROYECTO 3 - CENTRO COMERCIAL -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                         alt="Plaza Comercial Gran Sur - Impermeabilización Sika">
+                    <div class="proyecto-info">
+                        <h3>Plaza Comercial Gran Sur</h3>
+                        <p>Sistema completo Sikagard® para 15,000 m² de fachada. Resistencia a condiciones climáticas extremas.</p>
+                    </div>
+                </div>
+                
+                <!-- PROYECTO 4 - HOSPITAL -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" 
+                         alt="Hospital Regional - Recubrimientos especializados">
+                    <div class="proyecto-info">
+                        <h3>Hospital Regional</h3>
+                        <p>Recubrimientos especiales Sikagard®-720 para áreas médicas. Cumplimiento de normas sanitarias.</p>
+                    </div>
+                </div>
+                
+                <!-- PROYECTO 5 - ESCUELA -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" 
+                         alt="Colegio Santa María - Recubrimientos educativos">
+                    <div class="proyecto-info">
+                        <h3>Colegio Santa María</h3>
+                        <p>Sikacolor® en tonos vibrantes para ambiente educativo. Fácil mantenimiento y limpieza.</p>
+                    </div>
+                </div>
+                
+                <!-- PROYECTO 6 - HOTEL -->
+                <div class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Hotel Boutique - Recubrimientos de lujo">
+                    <div class="proyecto-info">
+                        <h3>Hotel Boutique La Mansión</h3>
+                        <p>Recubrimiento decorativo de alta gama para fachada histórica restaurada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="productos">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Productos Sika Destacados</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                Soluciones específicas para cada necesidad de protección y estética
+            </p>
+            
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <h3>Sikagard®</h3>
+                    <p>Sistema de recubrimientos protectores de alto rendimiento para fachadas de concreto.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Protección contra humedad</li>
+                        <li>Resistencia a rayos UV</li>
+                        <li>Fácil aplicación</li>
+                    </ul>
+                </div>
+                <div class="producto-card">
+                    <h3>Sikacolor®</h3>
+                    <p>Recubrimientos decorativos con amplia gama de colores y excelente durabilidad.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>+50 colores disponibles</li>
+                        <li>Texturas variadas</li>
+                        <li>Larga vida útil</li>
+                    </ul>
+                </div>
+                <div class="producto-card">
+                    <h3>Asesoría Técnica</h3>
+                    <p>Nuestro valor agregado como distribuidor autorizado.</p>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>Análisis de su proyecto</li>
+                        <li>Recomendaciones técnicas</li>
+                        <li>Soporte en obra</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Solicite su Cotización</h2>
+            <p style="text-align: center; margin-bottom: 50px;">
+                Como distribuidor autorizado, le garantizamos productos originales y soporte técnico especializado
+            </p>
+            
+            <div class="contacto-grid">
+                <form id="cotizar">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Tipo de proyecto</option>
+                            <option value="residencial">Residencial</option>
+                            <option value="comercial">Comercial</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="institucional">Institucional</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Describa su proyecto o necesidades..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="background: var(--sika-orange); border: none; cursor: pointer; width: 100%;">
+                        Solicitar Cotización
+                    </button>
+                </form>
+                
+                <div class="info-contacto">
+                    <div class="contacto-item">
+                        <div>📞</div>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p><a href="tel:+523333555522">33 3335 5552</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div>✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:isaacvelezsvs@gmail.com">isaacvelezsvs@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div>📍</div>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <p>Periférico #1664, Guadalajara, Jalisco</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div>🕒</div>
+                        <div>
+                            <strong>Horario de atención</strong>
+                            <p>Lun-Vie: 8:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div>📱</div>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p><a href="https://wa.me/523333555522?text=Hola,%20me%20interesan%20los%20recubrimientos%20Sika%20para%20fachadas" target="_blank">Enviar mensaje directo</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Script simple para el formulario
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por su interés! Nos pondremos en contacto dentro de las próximas 24 horas.');
+            this.reset();
+        });
+
+        // Botón de WhatsApp con mensaje personalizado
+        function initWhatsApp() {
+            const phoneNumber = '523333555522';
+            const message = 'Hola, me interesan los recubrimientos Sika para fachadas';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Actualizar todos los enlaces de WhatsApp
+            document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+                link.href = whatsappUrl;
+            });
+        }
+
+        initWhatsApp();
+    </script>
+</body>
+</html>
